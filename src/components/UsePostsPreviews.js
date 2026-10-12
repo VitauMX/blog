@@ -4,7 +4,7 @@ const usePostsPreviews = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
       query GET_POSTS_PREVIEWS {
-        allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+        allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
           edges {
             node {
               id
